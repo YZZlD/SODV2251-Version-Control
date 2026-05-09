@@ -5,12 +5,12 @@ import { StyleSheet, Text, View } from 'react-native';
 export default function Index() {
   return (
     <View style={styles.container}>
-      <Text>This Uses Expo Router Now</Text>
+        <StatusBar style="auto" />
+        <Text>This Uses Expo Router Now</Text>
 
-      <Link href="/map">
-        Go to Map
-      </Link>
-      <StatusBar style="auto" />
+        <Link href="/map">
+            Go to Map
+        </Link>
     </View>
   );
 }
