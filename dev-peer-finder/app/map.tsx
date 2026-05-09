@@ -1,5 +1,6 @@
 import { useRouter, Link } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
+import { useState } from 'react';
 import { StyleSheet, Text, View, Button, Pressable } from 'react-native';
 
 export default function Map() {
@@ -10,12 +11,11 @@ export default function Map() {
     <View style={styles.container}>
         <StatusBar style="auto" />
         <View style={styles.navigationLinkContainer}>
-            <Link href="/" asChild>
-                <Pressable style={styles.button}>
+                <Pressable onPress={() => router.navigate("/")} style={({ pressed }) => [styles.button, pressed && styles.buttonPressed]}>
                     <Text>Home</Text>
                 </Pressable>
-            </Link>
         </View>
+
       <Text>This is the Map</Text>
     </View>
   );
@@ -41,5 +41,8 @@ const styles = StyleSheet.create({
     position: "absolute",
     top: 60,
     left: 20,
-  }
+  },
+  buttonPressed: {
+    opacity: 0.9,
+  },
 });
